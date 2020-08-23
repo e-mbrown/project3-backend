@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
     before_action :authorized, only: [:auto_login]
 
     # REGISTER
