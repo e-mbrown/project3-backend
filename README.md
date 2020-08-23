@@ -39,7 +39,7 @@ Include a full list of features that have been [prioritized](https://res.cloudin
 - Comments Model
 - Deploy on Heroku
 
-Models [Suresh had used in class](https://res.cloudinary.com/techhire/image/upload/v1598206213/image_10_p5yeha.png) 
+Models [Donovan's Model Diagram](https://res.cloudinary.com/techhire/image/upload/v1598206213/image_10_p5yeha.png) 
 
 #### PostMVP 
 
@@ -74,7 +74,7 @@ Models [Suresh had used in class](https://res.cloudinary.com/techhire/image/uplo
 | Total | H | 6hrs| -hrs | -hrs |
 
 ## Additional Libraries
-FourSquare Jazz Data Example [Foursquare](https://api.foursquare.com/v2/venues/explore?near=manhattan&query=jazz&client_id=CLEV0SVE4QAHHRBL4JAAVYNQ1UVMEBBM1VX3GEKF0V4W2HDV&client_secret=TI4DZ2Y34A5CZKICHQTE0BLB3KM5XP2CJYCXQRN34OGG2THS&v=20200624) 
+FourSquare Jazz Data Example [Foursquare Data](https://api.foursquare.com/v2/venues/explore?near=manhattan&query=jazz&client_id=CLEV0SVE4QAHHRBL4JAAVYNQ1UVMEBBM1VX3GEKF0V4W2HDV&client_secret=TI4DZ2Y34A5CZKICHQTE0BLB3KM5XP2CJYCXQRN34OGG2THS&v=20200624) 
  
 
 ## Code Snippet
