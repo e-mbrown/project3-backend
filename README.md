@@ -1,4 +1,4 @@
-# Project Overview
+# Project Overview - Travel App BACKEND
 
 ## Project Schedule
 
@@ -8,12 +8,17 @@ You are **responsible** for scheduling time with your squad to seek approval for
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Day 1| Project Description | Incomplete
-|Day 1| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Incomplete
-|Day 2| Working RestAPI | Incomplete
-|Day 3| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 4| MVP & Bug Fixes | Incomplete
-|Day 5| Final Touches and Present | Incomplete
+|Day 1 - Sunday| Project Description | Complete
+|Day 1 - Sunday| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
+|Day 1 - Sunday| Deploy Heroku | Incomplete
+|Day 1 - Sunday| User Model | Incomplete
+|Day 2 - Monday| Remaining Models | Incomplete
+|Day 2 - Monday| Login Frontend | Incomplete
+|Day 3 - Tuesday| Login Frontend | Incomplete
+|Day 3 - Tuesday| CRUD | Incomplete
+|Day 4 - Wednesday| Core Application Structure (HTML, CSS, etc.) | Incomplete
+|Day 5 - Thursday| Complete MVP & Bug Fixes | Incomplete
+|Day 6- Friday| Final Touches and Present | Incomplete
 
 ## Project Description
 
