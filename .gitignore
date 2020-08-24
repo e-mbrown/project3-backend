@@ -6,6 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
+.env
 
 # Ignore all logfiles and tempfiles.
 /log/.keep
@@ -28,3 +29,4 @@
 .env
 .DS_Store
 .idea/
+log/development.log
