@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :comments do
-
   end
 
   resource :users, only: [:create]
