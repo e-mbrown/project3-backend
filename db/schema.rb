@@ -34,6 +34,9 @@ ActiveRecord::Schema.define(version: 2020_08_24_183338) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "untitled_table", id: :serial, force: :cascade do |t|
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"

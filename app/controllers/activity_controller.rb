@@ -1,5 +1,5 @@
 class ActivityController < ApplicationController
-
+  before_action :authorized
 
   def index
     @activity_list = Activity.all
@@ -13,7 +13,6 @@ class ActivityController < ApplicationController
           :data => @activity_list
       }
     end
-
   end
 
   #creates new activity for the user(profile) from API
@@ -33,8 +32,8 @@ class ActivityController < ApplicationController
 
   #Read - show all activities on wishlist
   def show
-    @all_activities = Activity.exists?(params[:id])
-    if @all_activities
+    @one_activities = Activity.exists?(params[:id])
+    if @one_activities
       render :json => {
           :response => 'successful',
           :data => Activity.find(params[:id])

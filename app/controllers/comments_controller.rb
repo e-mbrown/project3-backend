@@ -1,14 +1,15 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :authorized
 
   # GET /comments by user
   def index
     @comments = Comment.where({user_id: params[:category_id]})
-    if !@comment.exists?
+    if !@comments.exists?
     render json: {
         error: 'There are no available comments'
     }
-    else render json: @comment
+    else render json: @comments
     end
   end
 
