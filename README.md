@@ -21,11 +21,12 @@ APPLIES TO BACKEND AND FRONTEND
 
 Our project will be focused on creating a travel app, where users can save their upcoming travel destinations. 
 
+## Models 
+[Donovan's Model Diagram](https://res.cloudinary.com/techhire/image/upload/v1598206213/image_10_p5yeha.png) 
 
 ## Time/Priority Matrix 
 
 [Time Priority Matrix](https://res.cloudinary.com/stephaniev/image/upload/v1598241331/P3_-_Time_Priority_Matrix_x3jsgr.png)
-
 
 #### MVP
 
@@ -34,9 +35,6 @@ Our project will be focused on creating a travel app, where users can save their
 - Comments (HTML/CSS)
 - User Profile(HTML/CSS)
 - Deploy on Netlify
-
-## Models 
-[Donovan's Model Diagram](https://res.cloudinary.com/techhire/image/upload/v1598206213/image_10_p5yeha.png) 
 
 #### PostMVP 
 
