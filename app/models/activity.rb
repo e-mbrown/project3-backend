@@ -1,5 +1,5 @@
 class Activity < ApplicationRecord
-  has_many :favorites
+  has_many :comments
 
   validates_presence_of :name
 end
