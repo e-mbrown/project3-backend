@@ -1,26 +1,38 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
 
-  # GET /comments
+  # GET /comments by user
   def index
-    @comments = Comment.all
-
-    render json: @comments
+    @comments = Comment.where({user_id: params[:category_id]})
+    if !@comment.exists?
+    render json: {
+        error: 'There are no available comments'
+    }
+    else render json: @comment
+    end
   end
 
-  # GET /comments/1
-  def show
-    render json: @comment
-  end
+  # # GET /comments/1 by activity
+  # def show
+  #   @onecomment = activity.exists?(params[:location_id])
+  # end
+  #   if @onecomment
+  #   render json: @comment
+  # end
 
   # POST /comments
   def create
     @comment = Comment.new(comment_params)
-
-    if @comment.save
-      render json: @comment, status: :created, location: @comment
+    if User.exists?(@comment.user_id) && Activity.exists?(@comment.activity_id)
+      if @comment.save
+        render json: @comment, status: :created, location: @comment
+      else
+        render json: @comment.errors, status: :unprocessable_entity
+      end
     else
-      render json: @comment.errors, status: :unprocessable_entity
+      render json: {
+          error: 'User or activity does not exist'
+      }
     end
   end
 
