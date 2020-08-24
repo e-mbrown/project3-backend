@@ -1,4 +1,4 @@
-# Project Overview - Travel App BACK END 
+# Project Overview - Travel App BACKEND 
 
 ## Project Schedule
 
@@ -12,7 +12,6 @@ APPLIES TO BACKEND AND FRONTEND
 |Day 1 - Sunday| User Model | Incomplete
 |Day 2 - Monday| Remaining Models | Incomplete
 |Day 2 - Monday| Login Frontend | Incomplete
-|Day 3 - Tuesday| Login Frontend | Incomplete
 |Day 3 - Tuesday| CRUD | Incomplete
 |Day 4 - Wednesday| Core Application Structure (HTML, CSS, etc.) | Incomplete
 |Day 5 - Thursday| Complete MVP & Bug Fixes | Incomplete
