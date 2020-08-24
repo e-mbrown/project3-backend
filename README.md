@@ -68,8 +68,8 @@ Models [Donovan's Model Diagram](https://res.cloudinary.com/techhire/image/uploa
 | Total | H | 10hrs| -hrs | -hrs |
 
 ## Additional Libraries
-[Bootstrap](https://getbootstrap.com/) 
-[Milligram](https://cdnjs.com/libraries/milligram)
+- [Bootstrap](https://getbootstrap.com/) 
+- [Milligram](https://cdnjs.com/libraries/milligram)
  
 
 ## Code Snippet
