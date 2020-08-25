@@ -4,7 +4,9 @@ class CommentsController < ApplicationController
 
   # GET /comments by user
   def index
-    @comments = Comment.where({user_id: params[:category_id]})
+    puts params[:id]
+    puts @user.id
+    @comments = Comment.where({activity_id: params[:id], user_id: @user.id})
     if !@comments.exists?
     render json: {
         error: 'There are no available comments'
@@ -23,8 +25,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
+
     @comment = Comment.new(comment_params)
-    if User.exists?(@comment.user_id) && Activity.exists?(@comment.activity_id)
+    @comment.user_id = @user.id
+    if User.exists?(@comment.user_id)
       if @comment.save
         render json: @comment, status: :created, location: @comment
       else
@@ -57,8 +61,9 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
+
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:message, :user_id, :activity_id)
+      params.require(:comment).permit(:message, :activity_id)
     end
 end
