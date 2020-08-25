@@ -15,6 +15,19 @@ class ActivityController < ApplicationController
     end
   end
 
+  # Show activities by city
+  def activity_by_location
+    @location = :location
+    @activity_by_city = Activity.where({location: params[:location]})
+    if @activity_by_city
+      render :json => {
+          :data => @activity_by_city
+      } else {
+        :error => 'No activites found for this city.'
+    }
+    end
+  end
+
   #creates new activity for the user(profile) from API
   def create
     @one_activity = Activity.new(activity_params)
