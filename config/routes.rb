@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :favorites
+  resources :favorites, only: [:create, :show, :destroy]
   resources :comments do
   end
 

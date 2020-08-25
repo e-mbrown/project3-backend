@@ -15,7 +15,8 @@ class FavoritesController < ApplicationController
 
   # POST /favorites
   def create
-    @favorite = Favorite.new(favorite_params)
+    param = favorite_params
+    @favorite = Favorite.new(activity_id: param[:activity_id], visited: param[:visited], user_id: @user[:id])
 
     if @favorite.save
       render json: @favorite, status: :created, location: @favorite
@@ -35,7 +36,15 @@ class FavoritesController < ApplicationController
 
   # DELETE /favorites/1
   def destroy
-    @favorite.destroy
+    if (@favorite.user_id == @user.id)
+      render json: {
+          deleted: @favorite.destroy
+      }
+    else
+      render json:{
+          "message":"This favorite does not belong to you"
+      }
+    end
   end
 
   private
@@ -46,6 +55,6 @@ class FavoritesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def favorite_params
-      params.require(:favorite).permit(:user_id, :activity_id, :visited)
+      params.require(:favorite).permit( :activity_id, :visited)
     end
 end
