@@ -1,5 +1,5 @@
 class FavoritesController < ApplicationController
-  before_action :set_favorite, only: [:show, :update, :destroy]
+  before_action :set_favorite, only: [:update, :destroy]
 
   # GET /favorites
   def index
@@ -10,7 +10,36 @@ class FavoritesController < ApplicationController
 
   # GET /favorites/1
   def show
+    # p params
+    @favorite = Favorite.where({activity_id: params[:id], user_id:@user.id}).first()
     render json: @favorite
+  end
+
+  ##returns status of false if there is no favorite as a result, else returns true and a favorite
+  def toggle
+    p params
+    @favorite = Favorite.where({activity_id: params[:id], user_id:@user.id}).first()
+    p @favorite
+    if @favorite
+      @favorite.destroy()
+      render json: {
+          status: false
+      }
+    else
+      # param = favorite_params #don't uncomment this unless this request should have a body
+      @favorite = Favorite.new(activity_id: params[:id], user_id: @user[:id])
+
+      if @favorite.save
+        render json: {
+            fav: @favorite,
+            status:true}
+      else
+        render json: {
+            status:false,
+            error: @favorite.errors
+        }
+      end
+    end
   end
 
   # POST /favorites
