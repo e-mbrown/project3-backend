@@ -9,12 +9,12 @@ APPLIES TO BACKEND AND FRONTEND
 |Day 1 - Sunday| Project Description | Complete
 |Day 1 - Sunday| Wireframes / Priority Matrix / Timeline `backend` and `frontend`| Complete
 |Day 1 - Sunday| Deploy Heroku | Complete
-|Day 1 - Sunday| User Model | Incomplete
-|Day 2 - Monday| Remaining Models | Incomplete
-|Day 2 - Monday| Login Frontend | Incomplete
-|Day 3 - Tuesday| CRUD | Incomplete
-|Day 4 - Wednesday| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|Day 5 - Thursday| Complete MVP & Bug Fixes | Incomplete
+|Day 1 - Sunday| User Model | Complete
+|Day 2 - Monday| Remaining Models | Complete
+|Day 2 - Monday| Login Frontend | Complete
+|Day 3 - Tuesday| CRUD | In progress
+|Day 4 - Wednesday| Core Application Structure (HTML, CSS, etc.) | In Progress
+|Day 5 - Thursday| Complete MVP & Bug Fixes | In Progress
 |Day 6- Friday| Final Touches and Present | Incomplete
 
 ## Project Description
@@ -46,14 +46,14 @@ Our project will be focused on creating a travel app, where users can save their
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | JWT Authentication | H | 5hr | -hr | -hr|
-| Seed data for Authentication | H | 1hr | -hr | -hr|
+| Seed data for Authentication | H | 1hr | 3hr | -hr|
 | Complete Routes & Controllers for Comment (create, delete, and read) | H | 3hr | -hr | -hr|
-| Complete Routes & Controllers for User (create and read) | H | 3hr | -hr | -hr|
-| Complete Routes & Controllers for Favorite activity | H | 5hr | -hr | -hr|
-| Complete User model| H | 2hrs| -hr | -hr |
-| Complete Comments model| H | 2hrs| -hr | -hr |
-| Complete Activities model| H | 2hrs| -hr | -hr |
-| Debugging Backend | H | 5hr | -hr | -hr|
+| Complete Routes & Controllers for User (create and read) | H | 3hr | 2hr | -hr|
+| Complete Routes & Controllers for Favorite activity | H | 5hr | 2hr | -hr|
+| Complete User model| H | 2hrs| 1hr | -hr |
+| Complete Comments model| H | 2hrs| 1hr | -hr |
+| Complete Activities model| H | 2hrs| 1hr | -hr |
+| Debugging Backend | H | 5hr | 100!!!!!hr | -hr|
 | Total | H | 28hrs| -hrs | -hrs |
 
 #### PostMVP
