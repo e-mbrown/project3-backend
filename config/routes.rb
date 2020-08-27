@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :favorites, only: [:show, :destroy, :index]
+  resources :favorites, only: [:show, :destroy, :index, :update]
   resources :comments do
   end
 
@@ -18,8 +18,6 @@ Rails.application.routes.draw do
   delete "/activities/:id", to: "activity#destroy"
   post "/activities", to: "activity#create"
 
-  # post "/favorites/", to: "favorites#create"
-  # patch "/favorites/:id", to: "favorites#toggle"
   post "/favorites/:id", to: "favorites#toggle"
 
 end
