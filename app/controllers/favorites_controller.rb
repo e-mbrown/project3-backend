@@ -5,7 +5,16 @@ class FavoritesController < ApplicationController
   def index
     @favorites = Favorite.where({user_id: @user.id})
 
-    render json: @favorites
+    @result = []
+    @favorites.each do |f|
+      full_fav = {
+          favorite: f,
+          activity: f.activity
+      }
+      @result.push(full_fav)
+    end
+
+    render json: @result
   end
 
   # GET /favorites/1
