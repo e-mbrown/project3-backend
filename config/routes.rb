@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "/auto_login", to: "users#auto_login"
 
   post "/comments", to: "comments#create"
-  get "/comments/:id", to: "comments#index"
+  get "/activities/comments/:id", to: "comments#index"
 
   get "/activities", to: "activity#index"
   get "/activities/:id", to: "activity#show"
