@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
   post "/comments", to: "comments#create"
   get "/activities/comments/:id", to: "comments#index"
+  get "/comments", to: "comments#user"
 
   get "/activities", to: "activity#index"
   get "/activities/:id", to: "activity#show"
