@@ -2,16 +2,24 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :update, :destroy]
   before_action :authorized
 
-  # GET /comments by user
+  # GET /comments by activity
   def index
     puts params[:id]
     puts @user.id
-    @comments = Comment.where({activity_id: params[:id], user_id: @user.id})
+    @comments = Comment.where({activity_id: params[:id]})
     if !@comments.exists?
     render json: {
         error: 'There are no available comments'
     }
-    else render json: @comments
+    else
+      annotated_comments = []
+      @comments.each do |c|
+        annotated_comments.push({
+                                    can_delete: @user.id == c.user_id,
+                                    comment: c
+                                })
+      end
+      render json: annotated_comments
     end
   end
 

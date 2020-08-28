@@ -1,15 +1,14 @@
 Rails.application.routes.draw do
 
   resources :favorites, only: [:show, :destroy, :index, :update]
-  resources :comments do
-  end
+  resources :comments , only: [:destroy]
 
   resource :users, only: [:create]
   post "/login", to: "users#login"
   get "/auto_login", to: "users#auto_login"
 
-  post "/users/comments/:id", to: "comments#create"
-  get "/users/comments/:id", to: "comments#index"
+  post "/comments", to: "comments#create"
+  get "/comments/:id", to: "comments#index"
 
   get "/activities", to: "activity#index"
   get "/activities/:id", to: "activity#show"
