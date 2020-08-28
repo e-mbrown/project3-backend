@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_comment, only: [:show, :update]
   before_action :authorized
 
   # GET /comments by activity
@@ -58,9 +58,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def user
+    render json: Comment.where({user_id:@user.id})
+  end
+
   # DELETE /comments/1
   def destroy
-    @comment.destroy
+    @comment = Comment.find_by_id(params[:id])
+    # puts @user
+    render json: {
+        deleted: !!(@comment && @comment.user_id == @user.id && @comment.destroy) #true if deleted, false if incorrect user or no comment exists
+    }
   end
 
   private
