@@ -45,7 +45,8 @@ Our project will be focused on creating a travel app, where users can save their
 #### MVP
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| JWT Authentication | H | 5hr | -hr | -hr|
+| Working with Foursquare API Frontend | H | 3hrs| 3hr | -hr |
+| JWT Authentication | H | 5hr | 1hr | -hr|
 | Seed data for Authentication | H | 1hr | 3hr | -hr|
 | Complete Routes & Controllers for Comment (create, delete, and read) | H | 3hr | -hr | -hr|
 | Complete Routes & Controllers for User (create and read) | H | 3hr | 2hr | -hr|
@@ -53,7 +54,7 @@ Our project will be focused on creating a travel app, where users can save their
 | Complete User model| H | 2hrs| 1hr | -hr |
 | Complete Comments model| H | 2hrs| 1hr | -hr |
 | Complete Activities model| H | 2hrs| 1hr | -hr |
-| Debugging Backend | H | 5hr | 100!!!!!hr | -hr|
+| Debugging Backend | H | 5hr | 15hr | -hr|
 | Total | H | 28hrs| -hrs | -hrs |
 
 #### PostMVP
