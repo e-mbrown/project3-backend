@@ -1,15 +1,25 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_comment, only: [:show, :update]
   before_action :authorized
 
-  # GET /comments by user
+  # GET /comments by activity
   def index
-    @comments = Comment.where({user_id: params[:category_id]})
+    puts params[:id]
+    puts @user.id
+    @comments = Comment.where({activity_id: params[:id]})
     if !@comments.exists?
     render json: {
         error: 'There are no available comments'
     }
-    else render json: @comments
+    else
+      annotated_comments = []
+      @comments.each do |c|
+        annotated_comments.push({
+                                    can_delete: @user.id == c.user_id,
+                                    comment: c
+                                })
+      end
+      render json: annotated_comments
     end
   end
 
@@ -23,8 +33,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
+
     @comment = Comment.new(comment_params)
-    if User.exists?(@comment.user_id) && Activity.exists?(@comment.activity_id)
+    @comment.user_id = @user.id
+    if User.exists?(@comment.user_id)
       if @comment.save
         render json: @comment, status: :created, location: @comment
       else
@@ -46,9 +58,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def user
+    render json: Comment.where({user_id:@user.id})
+  end
+
   # DELETE /comments/1
   def destroy
-    @comment.destroy
+    @comment = Comment.find_by_id(params[:id])
+    # puts @user
+    render json: {
+        deleted: !!(@comment && @comment.user_id == @user.id && @comment.destroy) #true if deleted, false if incorrect user or no comment exists
+    }
   end
 
   private
@@ -57,8 +77,9 @@ class CommentsController < ApplicationController
       @comment = Comment.find(params[:id])
     end
 
+
     # Only allow a trusted parameter "white list" through.
     def comment_params
-      params.require(:comment).permit(:message)
+      params.require(:comment).permit(:message, :activity_id)
     end
 end
