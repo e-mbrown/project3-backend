@@ -65,6 +65,7 @@ class FavoritesController < ApplicationController
 
   # PATCH/PUT /favorites/1
   def update
+    # @favorite.where(id: param[id])
     if @favorite.update(favorite_params)
       render json: @favorite
     else
